@@ -1,7 +1,7 @@
 # Summary
 
-* [Introduction](README.md)
 * [Course Notes]()
   * [Trees]()
+    * [Introduction](NOTES/Trees/introduction.md)
     * [Abstract Data Type](NOTES/Trees/abstract-data-type.md)
-
+    * [Height and Depth](NOTES/Trees/height-and-depth.md)
