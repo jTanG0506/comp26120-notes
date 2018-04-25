@@ -17,6 +17,3 @@ A **sub-tree** of T rooted at the node *v* is a tree consisting of all the desce
 ![Subtree](assets/subtree-wide.png)
 
 A tree is **ordered** if a linear ordering relation is defined for the children of each node, that is, we can define an order among them.
-
-## Binary Trees
-A **binary tree** is an ordered tree in which each node has at most two children. A binary tree is **proper** if each internal node has two children. For each internal node, its children are labelled as a **left child** and a **right child**. The children are ordered so that a left child comes **before** a right child.

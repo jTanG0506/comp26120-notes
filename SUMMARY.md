@@ -6,3 +6,4 @@
     * [Abstract Data Type](NOTES/Trees/abstract-data-type.md)
     * [Height and Depth](NOTES/Trees/height-and-depth.md)
     * [Tree Traversal](NOTES/Trees/traversals.md)
+    * [Binary Trees](NOTES/Trees/binary-trees.md)
