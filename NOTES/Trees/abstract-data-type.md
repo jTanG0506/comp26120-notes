@@ -1,4 +1,4 @@
-# Tree - Abstract Data Type
+# Abstract Data Type
 
 The methods below are those that you would expect to find in a implementation of a tree data structure.
 
