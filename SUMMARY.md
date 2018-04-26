@@ -9,3 +9,4 @@
     * [Binary Trees](NOTES/Trees/binary-trees.md)
   * [Data Structures]()
     * [Vector Based](NOTES/Data Structures/vector-based.md)
+    * [Linked Lists](NOTES/Data Structures/linked-lists.md)
