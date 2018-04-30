@@ -1,8 +1,8 @@
 # Priority Queues
 
-A **priority queue** *P* is a container of elements with keys associated with them at the time of insertion, with two fundamental methods:
-- `insertItem(k, e)` - inserts an element `e` with a key `k` into *P*
-- `removeMin()` - returns and removes from *P* an element with the smallest key
+A **priority queue** {% math %} P {% endmath %} is a container of elements with keys associated with them at the time of insertion, with two fundamental methods:
+- `insertItem(k, e)` - inserts an element `e` with a key `k` into {% math %} P {% endmath %}
+- `removeMin()` - returns and removes from {% math %} P {% endmath %} an element with the smallest key
 
 ## Comparators
 

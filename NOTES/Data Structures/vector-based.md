@@ -1,6 +1,6 @@
 # Vector based representation
 
-A vector-based structure for representing **binary** trees is based on a simple way of numbering the nodes of *T*. We define a numbering function {% math %} p(.) {% endmath %}, which is known as a **level numbering** of the nodes in a binary tree *T*.
+A vector-based structure for representing **binary** trees is based on a simple way of numbering the nodes of {% math %} T {% endmath %}. We define a numbering function {% math %} p(.) {% endmath %}, which is known as a **level numbering** of the nodes in a binary tree {% math %} T {% endmath %}.
 
 {% math %}
 p(v) = \left\{
