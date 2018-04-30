@@ -12,3 +12,4 @@
     * [Linked Lists](NOTES/Data Structures/linked-lists.md)
     * [Keys and Total Order](NOTES/Data Structures/total-order-relation.md)
     * [Priority Queues](NOTES/Data Structures/priority-queues.md)
+    * [Heaps](NOTES/Data Structures/heaps.md)
