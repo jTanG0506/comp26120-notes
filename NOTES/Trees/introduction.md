@@ -12,7 +12,7 @@ A tree **T** is a non-empty set of nodes storing useful information in a parent-
 
 ![Internal and External](assets/internal-external-wide.png)
 
-A **sub-tree** of T rooted at the node *v* is a tree consisting of all the descendants of *v* in *T*, including *v* itself.
+A **sub-tree** of {% math %} T {% endmath %} rooted at the node {% math %} v {% endmath %} is a tree consisting of all the descendants of {% math %} v {% endmath %} in {% math %} T {% endmath %}, including {% math %} v {% endmath %} itself.
 
 ![Subtree](assets/subtree-wide.png)
 

@@ -37,7 +37,7 @@ Algorithm binaryPreorder(T, v)
 ```
 
 ## Inorder traversal
-In a inorder traversal, the action on a node *v* is performed in between the recursive traversals of its left and right subtrees. This can be viewed as visiting the nodes from left to right.
+In a inorder traversal, the action on a node {% math %} v {% endmath %} is performed in between the recursive traversals of its left and right subtrees. This can be viewed as visiting the nodes from left to right.
 ```
 Algorithm binaryPreorder(T, v)
   if v is an internal node then
