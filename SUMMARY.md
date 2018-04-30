@@ -10,3 +10,4 @@
   * [Data Structures]()
     * [Vector Based](NOTES/Data Structures/vector-based.md)
     * [Linked Lists](NOTES/Data Structures/linked-lists.md)
+    * [Keys and Total Order](NOTES/Data Structures/total-order-relation.md)
