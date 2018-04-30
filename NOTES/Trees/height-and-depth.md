@@ -1,6 +1,6 @@
 # Height and Depth
 
-## Depth of a node
+### Depth of a node
 Let *v* be a node of a tree {% math %} T {% endmath %}. The **depth** of {% math %} v {% endmath %} is the number of ancestors of {% math %} v {% endmath %}, excluding {% math %} v {% endmath %} itself. The depth of the root is 0.
 
 ```
@@ -13,7 +13,7 @@ Algorithm depth(T, v)
 
 ![Depth of a node](assets/depth-wide.png)
 
-## Height of a tree
+### Height of a tree
 The **height** of a tree is equal to the maximum depth of an external node of {% math %} T {% endmath %}.
 
 ```
