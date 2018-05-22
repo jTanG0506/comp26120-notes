@@ -18,3 +18,21 @@ As an abstract data type, a dictionary supports the following methods.
 
 ### Log Files
 One simple way of representing an unordered dictionary is by an unsorted sequence {% math %} S {% endmath %}, implemented itself by a vector or list that stores the keys and its corresponding elements. Such implementation is referred to as a **log file** or **audit trial**. This implementation is suitable for storing a small amount of data that does not change much over time.
+
+Ordered Dictionaries
+In a ordered dictionary, we use a comparator to provide the order relation among the keys. Such ordering allows efficient implementation of the dictionary abstract data type.
+
+### Abstract Data Type
+An **ordered dictionary** also supports the following methods:
+
+| Method Name | Description |
+| ----------- | ----------- |
+| `closestKeyBefore(k)` | returns the largest key that is {% math %} \leq k {% endmath %} |
+| `closestElemBefore(k)` | returns {% math %} e {% endmath %} with the largest key that is {% math %} \leq k {% endmath %} |
+| `closestKeyAfter(k)` | returns the smallest key that is {% math %} \geq k {% endmath %} |
+| `closesElemAfter(k)` | returns {% math %} e {% endmath %} with the smallest key that is {% math %} \geq k {% endmath %} |
+
+### Sorted Table
+If a dictionary {% math %} D {% endmath %} is ordered, the items can be stored in a vector {% math %} S {% endmath %} by non-decreasing order of the keys. The ordering of the keys allow faster searching than in the case of unordered sequences, which are possibly implemented as a linked list.
+
+The ordered vector implementation of a dictionary {% math %} D {% endmath %} is referred to as the **lookup table**. The implementation of `insertItem(k, e)` in a lookup table takes {% math %} O(n) {% endmath %} time in the worse case, as we need to shift up all the items with keys greater than {% math %} k {% endmath %} to make room for the new item.
