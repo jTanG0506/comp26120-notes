@@ -31,3 +31,20 @@ h = x_0a^{k-1} + x_1a^{k-2}+ \cdots + x_{k-2}a + x_{k-1}
 {% endmath %}
 
 Experimental studies show that good spreads of hash codes are obtained with certain choices for {% math %} a {% endmath %}, for example 33, 37, 39, 41. These values were tested on the case of 50,000 english words and each of these choices provided fewer than 7 collisions.
+
+### Compression Maps
+If the range of hash codes generated for the keys exceeds the index range of the bucket array, the attempt to write the element would cause an out-of-bounds exception, either because the index is negative or out of the range {% math %} [0, N - 1] {% endmath %}. The process of mapping an arbitrary integer to the range {% math %} [0, N - 1] {% endmath %} is called **compression**, and is the second step in evaluating the hash function.
+
+#### Division
+{% math %}
+\large
+h(k) = \vert k \vert \; \text{mod} \; N
+{% endmath %}
+This compression map is known as the **division method**. If {% math %} N {% endmath %} is a prime number, the division compression map may help spread out the hashed values. Otherwise, there is a likelihood that the patterns in the key distributions are repeated.
+
+#### Multiply Add and Divide (MAD)
+{% math %}
+\large
+h(k) = \vert ak + b \vert \; \text{mod} \; N
+{% endmath %}
+This compression map is known as the **multiply add and divide** (or MAD method), where {% math %} N {% endmath %} is a prime number and {% math %} a, b{% endmath %} are random non-negative integers selected at the time of compression, such that {% math %} a \; \text{mod} \; N \neq 0 {% endmath %}. With this compression function, the probability of collision is at most {% math %} 1/N {% endmath %}.
