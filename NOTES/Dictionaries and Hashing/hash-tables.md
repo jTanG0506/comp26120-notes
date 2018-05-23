@@ -6,3 +6,28 @@ For an unordered dictionary, if the keys represent the **addresses** of the elem
 A **hash function** {% math %} h {% endmath %} maps each key {% math %} k {% endmath %} from a dictionary to an integer in the range {% math %} [0, N - 1] {% endmath %}, where {% math %} N {% endmath %} is the bucket capacity. Instead of using {% math %} k {% endmath %} as the index of the bucket array, we use {% math %} h(k) {% endmath %}, so we store the item {% math %} (k, e) {% endmath %} in the bucket {% math %} A[h(k)] {% endmath %}.
 
 A good hash function is one that minimises collisions as much as possible whilst evaluating {% math %} h(k) {% endmath %} at a relatively low cost. The evaluation of a hash code consists of two phases: mapping {% math %} k {% endmath %} to an integer (**hash code**), then mapping the hash code to an integer within the range of indices in a bucket array (**compression map**).
+
+### Hash Codes
+The first action performed on an aribtrary key {% math %} k {% endmath %} is to assign to it an integer value (known as the **hash code**). This integer does not need to be in the range {% math %} [0, N - 1] {% endmath %}, but the algorithm for assigning it should avoid collision. 
+
+The range of values of {% math %} k {% endmath %} can be larger than that assumed in the hash code, for example {% math %} k {% endmath %} is a long and the hash value is a short. In this situation, we can create a hash code by taking only the lower or upper half of {% math %} k {% endmath %} as a hash code. Another method would be to sum the lower and upper halves of {% math %} k {% endmath %} (the summation hash).
+
+#### Summation Hash Code
+Consider a string of the form {% math %} (x_0 x_1 \cdots x_{k - 1}) {% endmath %} where each {% math %} x_i {% endmath %} is an ASCII character.
+
+{% math %}
+\large
+\sum_{i=0}^{k-1} \text{ASCII}(x_i)
+{% endmath %}
+
+The summation hash function as defined above would produce many unwanted collisions. Clearly, two strings where one is a permutations of the other would result in the same hash.
+
+#### Polynomial Hash Code
+In the polynomial hash code function, we also take into the position of a character in the string. By choosing a constant {% math %} a (a \neq 0, 1) {% endmath %}, we can defined the hash code as follows:
+
+{% math %}
+\large
+h = x_0a^{k-1} + x_1a^{k-2}+ \cdots + x_{k-2}a + x_{k-1}
+{% endmath %}
+
+Experimental studies show that good spreads of hash codes are obtained with certain choices for {% math %} a {% endmath %}, for example 33, 37, 39, 41. These values were tested on the case of 50,000 english words and each of these choices provided fewer than 7 collisions.
