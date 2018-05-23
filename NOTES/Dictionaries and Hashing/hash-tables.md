@@ -1,0 +1,8 @@
+# Hash Tables
+
+For an unordered dictionary, if the keys represent the **addresses** of the elements, we can effectively implement a dictionary using a **hash table**. The two main components of a has table are the **bucket arrays** and the **hash functions**. A bucket array for a hash table is an array {% math %} A {% endmath %} of size {% math %} N {% endmath %}, where each element of A is a container of key-element pairs and {% math %} N {% endmath %} is the capacity of the array. An element {% math %} e {% endmath %} with key {% math %} k {% endmath %} is inserted into the bucket {% math %} A[k] {% endmath %}. If keys are not unique, two elements may be mapped to the same bucket in {% math %} A {% endmath %} and in this case, we say that a **collision** has occurred.
+
+## Hash Functions
+A **hash function** {% math %} h {% endmath %} maps each key {% math %} k {% endmath %} from a dictionary to an integer in the range {% math %} [0, N - 1] {% endmath %}, where {% math %} N {% endmath %} is the bucket capacity. Instead of using {% math %} k {% endmath %} as the index of the bucket array, we use {% math %} h(k) {% endmath %}, so we store the item {% math %} (k, e) {% endmath %} in the bucket {% math %} A[h(k)] {% endmath %}.
+
+A good hash function is one that minimises collisions as much as possible whilst evaluating {% math %} h(k) {% endmath %} at a relatively low cost. The evaluation of a hash code consists of two phases: mapping {% math %} k {% endmath %} to an integer (**hash code**), then mapping the hash code to an integer within the range of indices in a bucket array (**compression map**).
