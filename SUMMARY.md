@@ -23,4 +23,5 @@
     * [AVL Trees](NOTES/Dictionaries and Hashing/avl-trees.md)
   * [Algorithmic Problem Solving]()
   * [Graphs]()
+    * [Terminology](NOTES/Graphs/terminology.md)
   * [Examinable Labs]()
