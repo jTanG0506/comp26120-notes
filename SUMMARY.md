@@ -25,6 +25,7 @@
     * [Divide and Conquer](NOTES/Algorithmic Techniques/divide-and-conquer.md)
     * [Greedy Method](NOTES/Algorithmic Techniques/greedy.md)
     * [Dynamic Programming](NOTES/Algorithmic Techniques/dynamic-programming.md)
+    * [Tractable vs Intractable](NOTES/Algorithmic Techniques/tractable-vs-intractable.md)
   * [Graphs]()
     * [Terminology](NOTES/Graphs/terminology.md)
     * [Representation](NOTES/Graphs/representation.md)
