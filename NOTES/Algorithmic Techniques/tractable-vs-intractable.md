@@ -42,3 +42,15 @@ In fact, all known algorithms for graph colouring for {% math %} k \geq 3 {% end
 > Find a tour of N cities in a country (assuming all cities are reachable). The tour should visit every city just once, return to the starting point and be of minimum distance
 
 This is known as an **optimisation problem**, as the requirement isn't to just find a solution, but to find the *best* solution (minimum distance). One way to solve this problem would be exhaustive enumeration: starting at any city, enumerate all possible permutations of cities to visit, find the total distance of each permutation and choose one of minimum distance. There are {% math %} (N - 1)! {% endmath %} permutations for {% math %} N {% endmath %} cities, so this is an exponential solution. Other approaches include dynamic programming, but all are exponential in worse-case.
+
+## Scheduling
+> A collection of tasks are to be undertaken by allocating them to slots. Slots may be time periods, machines, rooms, people's availability, or a combination of these.
+
+Usually the allocation is subject to the constraints:
+- **Compatibility**: which tasks fit which slots?
+
+- **Scheduling**: e.g. temporal orders - some tasks may have to be performed before others, some may or may not be allowed to be performed simultaneously
+
+- **Resources**: are resources unlimited or limited?
+
+- **Optimisation**: we may require solutiosn that maximise or minimise given measures - for example, we may require all tasks to be completed in minimum time, or that the allocation distributes tasks as evenly as possible
