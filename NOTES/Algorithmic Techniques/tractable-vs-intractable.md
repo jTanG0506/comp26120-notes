@@ -54,3 +54,22 @@ Usually the allocation is subject to the constraints:
 - **Resources**: are resources unlimited or limited?
 
 - **Optimisation**: we may require solutiosn that maximise or minimise given measures - for example, we may require all tasks to be completed in minimum time, or that the allocation distributes tasks as evenly as possible
+
+#### Examples
+- **Scheduling algorithms in multi-tasking operating systems** by which threads, processes or data flows are given access to the system resources. Constraints include effective load balancing and achieved a required quality of service.
+
+- **Industrial processing**: combining jobs and their scheduling to achieve required outputs.
+
+- **Rostering**: constructing a roster of buses and drivers to provide a bus service.
+
+- **Timetabling**: allocation students, staff, classes, rooms and times to provide a timetable.
+
+#### Algorithms
+- Some have linear or polynomial solutions, often using simple allocation methods, for example, first-come-first-served allocations, or greedy methods.
+
+- However, most scheduling problems have only exponential solutions in general. The general case of timetabling is such a problem and exhaustive enumeration is one approach.
+
+- Graph colouring is a method of solving some job scheduling problems. Suppose the nodes are tasks, two jobs are linked by an edge if they **conflict** (cannot occupy the same slot). A colouring with {% math %} k {% endmath %} colours schedules the jobs into {% math %} k {% endmath %} slots - in exponential time...
+
+## Heuristics
+**Heuristics** are rules that can be used in decision making which are intended to reach optimal solutions, but not guarenteed to do so. Heuristics are useful when exhaustive searches are exponential time, and may reduce the search to polynomial time, but achieve only approximate solutions in general.
