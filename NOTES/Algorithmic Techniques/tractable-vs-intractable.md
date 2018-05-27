@@ -37,3 +37,8 @@ while n <= N do
 
 #### Conclusion
 In fact, all known algorithms for graph colouring for {% math %} k \geq 3 {% endmath %} are exponential. This is an example of an **NP-complete problem**, where known solutions are exponential. Whether NP-complete problems admit polynomial-time algorithms is one of the most important open problems in Computer Science.
+
+## Travelling Salesperson
+> Find a tour of N cities in a country (assuming all cities are reachable). The tour should visit every city just once, return to the starting point and be of minimum distance
+
+This is known as an **optimisation problem**, as the requirement isn't to just find a solution, but to find the *best* solution (minimum distance). One way to solve this problem would be exhaustive enumeration: starting at any city, enumerate all possible permutations of cities to visit, find the total distance of each permutation and choose one of minimum distance. There are {% math %} (N - 1)! {% endmath %} permutations for {% math %} N {% endmath %} cities, so this is an exponential solution. Other approaches include dynamic programming, but all are exponential in worse-case.
