@@ -48,3 +48,22 @@ If the whole subtree is visited and the element is not found, the search termina
 
 #### Computational Cost
 The binary tree search algorithm executes a constant number of operations for each node during the traversal. The binary search algorithm starts from the root node and goes down one level at each call and the number of levels in a binary search tree is called the height {% math %} h {% endmath %}. It follows that `findElement` runs in {% math %} O(h) {% endmath %} - which can be a problem as {% math %} h {% endmath %} can potentially be close to {% math %} n {% endmath %}. To deal with this issue, we need to keep the tree height optimal, as close as {% math %} O(\log n) {% endmath %} as possible, one way to do this is to use an [AVL tree](avl-trees.md).
+
+#### Dictionary Search
+The method `findElement(k)` can be performed on a dictionary {% math %} D {% endmath %} if we store {% math %} D {% endmath %} as a binary search tree and call the method `TreeSearch(k, D.root())`.
+
+```
+Algorithm TreeSearch(k, v)
+  Input: A search key k and a node v of a binary search tree
+  Output: A node w of D equal to k, or an exception
+
+  if k = key(v) then
+    return v
+  else if k is an external node then
+    return NO_SUCH_KEY
+  else if k < key(v) then
+    return TreeSearch(k, D.leftChild(v))
+  else
+    return TreeSearch(k, D.rightChild(v))
+  end
+```
