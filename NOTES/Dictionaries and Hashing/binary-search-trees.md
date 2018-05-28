@@ -33,3 +33,18 @@ T(n) = \left\{
     \right.
 {% endmath %}
 In the worse case, the stop terminates when there are no more candidate items, so the maximal number of recursive calls is {% math %} m {% endmath %} such that {% math %} n / 2^m < 1 {% endmath %}, which implies that {% math %} \lfloor \log n \rfloor + 1 {% endmath %}, so `BinarySearch(S, k, 0, n - 1)` runs in {% math %} O(\log n) {% endmath %} time.
+
+## Binary Search Tree
+A **binary search tree** is a tree data structure adapted to a binary search algorithm. Each node stores an element {% math %} e {% endmath %} and that the elements in the left subtree of such node are smaller or equal to {% math %} e {% endmath %}, while the elements in the right subtree of such node are greater or equal to {% math %} e {% endmath %}. An inorder traversal of a binary search tree visits the elements in the non-decreasing order.
+
+A binary search tree can be used to search for an element by traversing down the tree. At each node, we compare the value we are searching for, {% math %} x {% endmath %}, with {% math %} e {% endmath %}, with three outcomes:
+- if {% math %} x = e {% endmath %}, the search terminates successfully
+
+- if {% math %} x < e {% endmath %}, the search continues in the left subtree
+
+- if {% math %} x > e {% endmath %}, the search continues in the right subtree
+
+If the whole subtree is visited and the element is not found, the search terminates unsuccessfully.
+
+#### Computational Cost
+The binary tree search algorithm executes a constant number of operations for each node during the traversal. The binary search algorithm starts from the root node and goes down one level at each call and the number of levels in a binary search tree is called the height {% math %} h {% endmath %}. It follows that `findElement` runs in {% math %} O(h) {% endmath %} - which can be a problem as {% math %} h {% endmath %} can potentially be close to {% math %} n {% endmath %}. To deal with this issue, we need to keep the tree height optimal, as close as {% math %} O(\log n) {% endmath %} as possible, one way to do this is to use an [AVL tree](avl-trees.md).
