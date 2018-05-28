@@ -67,3 +67,9 @@ Algorithm TreeSearch(k, v)
     return TreeSearch(k, D.rightChild(v))
   end
 ```
+
+#### Insertion into BST
+To perform the operation `insertElem(k, e)` into a dictionary {% math %} D {% endmath %} implemented as a binary search tree, we call the method `TreeSearch(k, D.root())`. Suppose that {% math %} w {% endmath %} is the node returned by `TreeSearch`, then:
+- If besides {% math %} w {% endmath %}, a flag `NO_SUCH_KEY` is returned, then compare {% math %} e {% endmath %} with {% math %} w {% endmath %}. If {% math %} e < w {% endmath %}, create a new left child and insert the element {% math %} e {% endmath %} with key {% math %} k {% endmath %}. Otherwise, create a new right child and insert the element {% math %} e {% endmath %} with key {% math %} k {% endmath %}.
+
+- If only the node {% math %} w {% endmath %} is returned, then we have another item with key {% math %} k {% endmath %}. So we call the algorithm `TreeSearch(k, D.leftChild(w))` and `TreeSearch(k, D.rightChild(w))` and recursively apply the algorithm returned by node from `TreeSearch`.
