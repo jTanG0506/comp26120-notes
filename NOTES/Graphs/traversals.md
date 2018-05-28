@@ -49,6 +49,12 @@ Algorithm BFS(G, s)
     i <- i + 1
   end
 ```
+
+#### Complexity of DFS and BFS
+- For the **adjacency list** representation, the complexity is linear, {% math %}O(N + E){% endmath %}
+
+- For the **adjacency matrix** representation, the complexity is quadratic, {% math %}O(N^2){% endmath %}
+
 ## Priority Search
 Priority searches are often used to implement **heuristic search methods** where the priority is calculated at each node to provide an indication of whether a route through this node is likely to reach a required goal. In a priority search, we visit the root, then at each step, visit a node that has the **highest priority** amongst univisted children of visited nodes.
 
@@ -60,3 +66,8 @@ All the above search techniques (traversals) can be coded with the same program.
 - When the data structure is a **queue**, the traversal is **BFS**
 
 - When the data structure is a **priority queue**, the traversal is **priority search**
+
+The idea is to start by pushing the root node of the tree onto the structure, then visit the top element of the structure, pop it and push its children onto the structure. Therefore the structure stores the unvisited children of visited nodes, in the order which they are encountered.
+
+## Graph Traversals
+A tree is a directed graph such that there is a distinguished node (the root) such that there is a unique path from the root to any node in the graph. To modify tree traversal for graphs, we may revisit nodes - so mark nodes as viisted/unvisited and only continue traversal from unvisited nodes, and there may not be one node from which all others are reachable - so choose a node, perform traversal, then start traversal again from any unvisited nodes.
