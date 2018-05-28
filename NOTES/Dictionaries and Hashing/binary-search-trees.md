@@ -73,3 +73,14 @@ To perform the operation `insertElem(k, e)` into a dictionary {% math %} D {% en
 - If besides {% math %} w {% endmath %}, a flag `NO_SUCH_KEY` is returned, then compare {% math %} e {% endmath %} with {% math %} w {% endmath %}. If {% math %} e < w {% endmath %}, create a new left child and insert the element {% math %} e {% endmath %} with key {% math %} k {% endmath %}. Otherwise, create a new right child and insert the element {% math %} e {% endmath %} with key {% math %} k {% endmath %}.
 
 - If only the node {% math %} w {% endmath %} is returned, then we have another item with key {% math %} k {% endmath %}. So we call the algorithm `TreeSearch(k, D.leftChild(w))` and `TreeSearch(k, D.rightChild(w))` and recursively apply the algorithm returned by node from `TreeSearch`.
+
+#### Removal from a BST
+Performing `removeElement(k)` on a dictionary {% math %} D {% endmath %} implemented with a binary search tree introduces an additional difficulty that the tree needs to remain connected after the removal.
+
+First, we execute `TreeSearch(k, D.root())` to find a node with a key {% math %} k {% endmath %}. If the algorithm returns an exception, there is no such element in {% math %} D {% endmath %}. If the key {% math %} k {% endmath %} is found in {% math %} D {% endmath %} and node returned is a leaf node, then the removal operation is simple.
+
+If the node {% math %} w {% endmath %} with the key {% math %} k {% endmath %} is an internal node, its simple removal would create two disjoint trees, so to avoid this, we do the following:
+1. Find the first node {% math %} y {% endmath %} that follows {% math %} w {% endmath %} in an inorder traversal - i.e. the leftmost internal node in the right subtree of {% math %} w {% endmath %}.
+2. Save the element stored at {% math %} w {% endmath %} into a temporary variable {% math %} t {% endmath %}, and move {% math %} y {% endmath %} into {% math %} w {% endmath %}, removing the previously stored element of {% math %} w {% endmath %}.
+3. Remove the element {% math %} y {% endmath %} from {% math %} D {% endmath %}.
+4. Return the element stored in the temporary variable {% math %} t {% endmath %}.
