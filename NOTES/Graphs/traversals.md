@@ -23,3 +23,28 @@ Algorithm DFS(G, v)
     end
   end
 ```
+
+## Breadth-First Search (BFS)
+Breadth-first search traverses a connected component of a graph, and in so doing, defines a useful spanning tree. BFS proceeds in rounds and subdivides the vertices into *level*, which represent the minimum number of edges from the start vertex to each vertex. The start idex is given level 0, and acts as an anchor. In the first round, we explore all the vertices we can reach in one edge, marking each as explored, and placing these vertices into level 1. In the second round, we explore all the vertices that can be reached in two edges from the start vertex. These new vertices, which are adjacent to level 1 vertices and not previous assigned to a label, are placed into level 2, and so on.
+
+```
+Algorithm BFS(G, s)
+  Input: A graph G and a vertex s of G
+  Output: A labeling of the edges in the connected component of s as discovery and cross edges
+
+  Create an empty list L(0)
+  Mark s as explored and insert s into L(0)
+  i <- 0
+  while L(i) is not empty do
+    create an empty list L(i + 1)
+    for each vertex v in L(i) do
+      for each edge e = (v, w) incident on v in G do
+        if edge e is unexplored then
+          if vertex w is unexplored then
+            Label e as a discovery edge
+            Mark w as explored and insert w into L(i + 1)
+          else
+            Label e as a cross edge
+
+    i <- i + 1
+  end
