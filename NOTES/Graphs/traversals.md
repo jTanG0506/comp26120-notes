@@ -48,3 +48,15 @@ Algorithm BFS(G, s)
 
     i <- i + 1
   end
+```
+## Priority Search
+Priority searches are often used to implement **heuristic search methods** where the priority is calculated at each node to provide an indication of whether a route through this node is likely to reach a required goal. In a priority search, we visit the root, then at each step, visit a node that has the **highest priority** amongst univisted children of visited nodes.
+
+## Generic Search
+All the above search techniques (traversals) can be coded with the same program. The program uses an axuiliary data structure with operations `push`, `pop`, `top` and `empty`. A **priority queue** has the operations of a queue, but `top` returns **an item of highest priority in the queue** and `pop` removes this item.
+
+- When the data structure is a **stack**, the traversal is **DFS**
+
+- When the data structure is a **queue**, the traversal is **BFS**
+
+- When the data structure is a **priority queue**, the traversal is **priority search**
